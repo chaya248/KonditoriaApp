@@ -1,4 +1,4 @@
-name: Deploy to EC2
+name: Deploy to EC2 Chaya
 
 on:
   push:
@@ -28,4 +28,4 @@ jobs:
             cd ../node.js
             npm install
 
-            sudo systemctl restart bakery.service
+            sudo systemctl restart bakery.service 
