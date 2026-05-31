@@ -3,7 +3,7 @@ name: Deploy to EC2
 on:
   push:
     branches:
-      - yehudit_stein
+      - chaya_erlanger
 
 jobs:
   deploy:
@@ -18,7 +18,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY_CHAYA }}
           script: |
             cd ~/KonditoriaApp
-            git pull origin yehudit_stein
+            git pull origin chaya_erlanger
 
             cd react
             npm install
