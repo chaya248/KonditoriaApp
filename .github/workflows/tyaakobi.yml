@@ -18,7 +18,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY_TYAAKOBI }}
           script: |
             cd ~/KonditoriaApp
-            git pull origin tamar_yaakobi
+          git pull origin chaya_erlanger
 
             cd react
             npm install
