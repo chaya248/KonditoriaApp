@@ -18,8 +18,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY_CHAYA }}
           script: |
             cd ~/KonditoriaApp
-            git checkout main
+            git remote set-url origin https://github.com/chaya248/KonditoriaApp.git
             git fetch origin
-            git branch -D chaya_erlanger || true
-            git checkout -b chaya_erlanger origin/chaya_erlanger
+            git checkout chaya_erlanger || git checkout -b chaya_erlanger origin/chaya_erlanger
             git pull origin chaya_erlanger
