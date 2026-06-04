@@ -8,7 +8,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Connect and deploy
         uses: appleboy/ssh-action@v1.0.3
@@ -18,14 +17,4 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY_TYAAKOBI }}
           script: |
             cd ~/KonditoriaApp
-          git pull origin chaya_erlanger
-
-            cd react
-            npm install
-            npm run build
-            sudo cp -r dist/* /var/www/html/
-
-            cd ../node.js
-            npm install
-
-            sudo systemctl restart bakery.service
+            git pull origin chaya_erlanger
