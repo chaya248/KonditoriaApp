@@ -13,7 +13,6 @@ jobs:
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.EC2_HOST_CHAYA }}
-          port: 22
           username: ${{ secrets.EC2_USER_CHAYA }}
           key: ${{ secrets.EC2_SSH_KEY_CHAYA }}
           script: |
@@ -23,7 +22,7 @@ jobs:
             git checkout chaya_erlanger || git checkout -b chaya_erlanger origin/chaya_erlanger
             git pull origin chaya_erlanger
             
-            # שלבי הבנייה (לפי ההוראות):
+            # שלבי הבנייה:
             cd react
             npm install
             npm run build
@@ -32,5 +31,5 @@ jobs:
             cd ../node.js
             npm install
             
-            # הפעלה מחדש (אם יש לך service כזה):
+            # הפעלה מחדש:
             sudo systemctl restart bakery.service || echo "Service not found, skipping"
