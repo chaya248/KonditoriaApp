@@ -22,3 +22,15 @@ jobs:
             git fetch origin
             git checkout chaya_erlanger || git checkout -b chaya_erlanger origin/chaya_erlanger
             git pull origin chaya_erlanger
+            
+            # שלבי הבנייה (לפי ההוראות):
+            cd react
+            npm install
+            npm run build
+            sudo cp -r dist/* /var/www/html/
+            
+            cd ../node.js
+            npm install
+            
+            # הפעלה מחדש (אם יש לך service כזה):
+            sudo systemctl restart bakery.service || echo "Service not found, skipping"
