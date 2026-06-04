@@ -19,6 +19,5 @@ jobs:
           script: |
             cd ~/KonditoriaApp
             git remote update
-            git fetch --all
-            git checkout chaya_erlanger || git checkout -b chaya_erlanger origin/chaya_erlanger
-            git pull origin chaya_erlanger
+            git fetch origin
+            git checkout -t origin/chaya_erlanger || git pull origin chaya_erlanger
